@@ -4,9 +4,9 @@ validateAge();
 function validateAge() {
   let userAge = prompt(`Введите ваш возраст`);
   if (userAge >= 18) {
-    alert("Вы достаточно зрелый");
+    alert("Вы достаточно взрослый");
   } else {
-    alert("Вы ещё зеленый");
+    alert("Вы ещё маленький");
     validateAge();
   }
 }

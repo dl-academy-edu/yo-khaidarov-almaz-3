@@ -125,41 +125,10 @@ const developers = [
   ];
   
   //////////////////////////////Код///////////////////////////////////
-  console.log(`Информация будет выведена через 10 секунд: `);
-  let i = 10;
-  
-  let myPrinTextCounter = setInterval(function () {
-    console.log(i + " ожидание...");
-    i--;
-  }, 1000);
-  setTimeout(() => {
-    clearInterval(myPrinTextCounter);
-  }, 10000);
-  setTimeout(printText, 10000);
-  function printText() {
-    let finalText = [];
-    for (i = 0; i < developers.length; i++) {
-      let affectedByText = data[i].affectedBy.slice(0, 4).join(", ");
-      if (data[i].affectedBy.length > 4) {
-        affectedByText += " и другие языки программирования";
-      }
-      let findedDeveloper;
-      let influencedByList = data[i].influencedBy.join(", ");
-      let filenameExtensionsText = data[i].filenameExtensions
-        .split(", ")
-        .map(function (elem) {
-          return "." + elem;
-        })
-        .join(", ");
-  
-      developers.forEach((element) => {
-        if (element.index === data[i].developerIndex) {
-          findedDeveloper = element;
-        }
-      });
-      finalText.push(
-        `${data[i].name} - язык программирования выпущенный в ${data[i].year} году.\nАвтором языка стал ${findedDeveloper.name} - ${findedDeveloper.work}.\nФайлы программ, написанных на ${data[i].name}, могут иметь расширения ${filenameExtensionsText}.\n${data[i].name} испытал влияние ${data[i].influencedBy.length} языков программирования: ${influencedByList}.\n${data[i].name} повлиял на ${affectedByText}.`
-      );
-    }
-    console.log(finalText.join("\n\n"));
+  for (i = 0; i < developers.length; i++) {
+    let affectedByText = data[i].affectedBy.slice(0, 5).toString();
+    console.log(affectedByText);
   }
+  
+  // console.log(`${НАЗВАНИЕ ЯП} -  язык программирования выпущенный в ${ГОД ВЫПУСКА ЯП} году.\nАвтором языка стал ${АВТОР ЯП} - ${РОД ДЕЯТЕЛЬНОСТИ АВТОРА ЯП}.\nФайлы программ, написанных на ${НАЗВАНИЕ ЯП}, могут иметь расширения ${РАСШИРЕНИЯ ФАЙЛОВ}.\n${НАЗВАНИЕ ЯП} испытал влияние ${ДЛИННА СПИСКА С ЯП ОКАЗАВШИМИ ВЛИЯНИЕ} языков программирования: ${СПИСОК ЯП ОКАЗАВШИХ ВЛИЯНИЕ}.\n${НАЗВАНИЕ ЯП} повлиял на ${ЯП ИСПЫТАВШИЕ ВЛИЯНИЕ}.`)
+  

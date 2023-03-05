@@ -1,0 +1,228 @@
+@import "_variables.base";
+@import "_mixins";
+
+/*
+  Import vendor libraries
+*/
+@import "vendor/_normalize";
+
+/*
+  Import utils classes and base styles
+*/
+@import "_utils";
+@import "_base";
+@import "_fonts";
+
+/*
+  Import all other blocks
+*/
+@import "_blocks/signin";
+@import "_blocks/register";
+@import "_blocks/btnscroll";
+@import "_blocks/footer";
+@import "_blocks/header";
+
+/*
+  Ниже пример подключения других блоков
+
+  Каждый новый файл должен отвечать за конкретный блок в терминах БЭМ
+  (https://ru.bem.info/methodology/key-concepts/#%D0%B1%D0%BB%D0%BE%D0%BA)
+
+  Для именования селекторов давайте придерживаться стиля two dashes
+  (https://ru.bem.info/methodology/naming-convention/#%D1%81%D1%82%D0%B8%D0%BB%D1%8C-two-dashes)
+  block-name__element-name--modificator
+*/
+
+
+.main {
+  &__group {
+    display: flex;
+  }
+  &__title {
+    font-family: $font-gilroy;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 47px;
+    line-height: 57px;
+    color: #070707;
+    max-width: 280px;
+  }
+  &__text {
+    font-family: $font-gilroy;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #070707;
+    max-width: 226px;
+    margin-top: 93px;
+  }
+  &__slider {
+    display: flex;
+    justify-content: space-around;
+  }
+  &__button {
+    background: #FFFFFF;
+    border: #FFFFFF;
+  }
+}
+
+.about {
+
+  &__background {
+    background-color: #F6F6F6;
+  }
+  &__title {
+    font-family: $font-gilroy;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 41px;
+    text-align: center;
+    color: #070707;
+    margin-top: 60px;
+    margin-bottom: 51px;
+    padding-top: 60px;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-left: 50px;
+    padding-bottom: 62px;
+  }
+  &__list-item {
+    font-family: $font-gilroy;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #070707;
+    max-width: 448px;
+    display: block;
+    text-align: initial;
+    // border: 2.5px solid #070707;
+    margin-top: 20px;
+    // padding: 15px;  
+  }
+  &__list-i {
+    border:2.5px solid #070707;
+    height:135px;
+    max-width:900px;
+    padding:15px;
+    padding-top: 5px;
+    margin-bottom: 35px;
+    position:relative;
+  }
+  &__list-i::before {
+    border:25px solid #f6f6f6 transparent;
+    border-top-color: 30px #070707;
+    position:absolute;
+    top:100%;
+    right:25px;
+    content:'';
+  }
+  &__list-i::after {
+    border:25px solid #f6f6f6 transparent;
+    border-top-color:#f6f6f6;
+    position:absolute;
+    top:100%;
+    right:25px;
+    content:'';
+  }
+}
+
+// скилы
+
+.skills {
+  &__title {
+    font-family: $font-gilroy;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 41px;
+    text-align: center;
+    color: #070707;
+    margin-top: 60px;
+  }
+  &__tx {
+    font-family: $font-gilroy;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    color: #070707;
+    margin-top: 20px;
+    margin-bottom: 50px;
+  }
+}
+
+.skills {
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+  }
+  &__list-img {
+    margin-bottom: 20px;
+  }
+  &__list-item {
+    font-family: $font-gilroy;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #828282;
+  }
+  &__flex-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__label {
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    color: #828282;
+  }
+}
+progress {
+  -webkit-appearance: none; 
+}
+progress::-webkit-progress-bar {
+  background-color: #E5E5E5;
+  height: 9px;
+  margin-top: 7px;
+ }
+progress::-webkit-progress-value {
+  background-color: #070707;
+  height: 9px;
+ }
+
+
+// Portfolio
+
+.portfolio {
+  &__background {
+    background: #F6F6F6;
+  }
+  &__title {
+    font-family: $font-gilroy;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 41px;
+    text-align: center; 
+    color: #070707;
+    margin-top: 60px;
+    margin-bottom: 50px;
+  }
+}
+
+// modal Sign In
